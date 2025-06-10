@@ -14,6 +14,10 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 For production mode
 
+### `npm run lint`
+
+Run the linter & formatter (using Biome), fixes errors by default.
+
 ### `npm run test`
 
 Run the test cases.
