@@ -1,7 +1,12 @@
 const { persistenceService } = require("../../services");
 
 module.exports = async (fastify, opts) => {
-	fastify.post("/", async (request, reply) => {
+	fastify.post("/", {
+		...opts,
+		schema: {
+			body: { $ref: 'requestBodySchema' }
+		}
+	}, async (request, reply) => {
 		const tokens = request.body;
 		if (!Array.isArray(tokens)) {
 			reply
